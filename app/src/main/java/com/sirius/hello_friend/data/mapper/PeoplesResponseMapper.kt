@@ -4,8 +4,9 @@ import com.sirius.hello_friend.data.model.response.PeopleResponse
 import com.sirius.hello_friend.data.model.response.PeoplesResponse
 import com.sirius.hello_friend.domain.model.Gender
 import com.sirius.hello_friend.domain.model.People
+import javax.inject.Inject
 
-class PeoplesResponseMapper {
+class PeoplesResponseMapper /*@Inject*/ constructor() {
 
     fun map(data: PeoplesResponse): List<People> {
         return data.results.map { map(it) }
