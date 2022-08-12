@@ -6,7 +6,7 @@ import com.sirius.hello_friend.domain.model.Gender
 import com.sirius.hello_friend.domain.model.People
 import javax.inject.Inject
 
-class PeoplesResponseMapper /*@Inject*/ constructor() {
+class PeoplesResponseMapper @Inject constructor() {
 
     fun map(data: PeoplesResponse): List<People> {
         return data.results.map { map(it) }

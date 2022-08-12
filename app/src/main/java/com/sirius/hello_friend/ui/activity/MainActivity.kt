@@ -4,6 +4,7 @@ import CharactersScreen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rxjava3.subscribeAsState
@@ -13,21 +14,21 @@ import com.sirius.hello_friend.ui.theme.HelloFriendTheme
 import com.sirius.hello_friend.ui.viewmodel.PeopleVM
 import dagger.hilt.android.AndroidEntryPoint
 
-//@AndroidEntryPoint
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-
-    //todo Inject vm
+    private val vm: PeopleVM by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             HelloFriendTheme(darkTheme = true) {
                 Surface(contentColor = Color.LightGray) {
-                    //MainScreen()
+                    MainScreen(vm)
                 }
             }
         }
+        vm.consume()
     }
 
     @Composable

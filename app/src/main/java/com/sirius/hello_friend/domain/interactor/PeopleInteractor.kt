@@ -5,7 +5,7 @@ import com.sirius.hello_friend.domain.repository.PeopleRepository
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
-class PeopleInteractor /*@Inject*/ constructor(
+class PeopleInteractor @Inject constructor(
     private val repository: PeopleRepository
 ) {
 

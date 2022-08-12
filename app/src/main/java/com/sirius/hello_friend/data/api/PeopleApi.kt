@@ -8,10 +8,10 @@ import retrofit2.http.Path
 
 interface PeopleApi {
 
-    @GET("/people")
+    @GET("people")
     fun getPeople(): Single<PeoplesResponse>
 
-    @GET("/people/{peopleId}")
+    @GET("people/{peopleId}")
     fun getPeopleById(
         @Path("peopleId") peopleId: String
     ): Single<PeopleResponse>
