@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.sirius.hello_friend.domain.interactor.PeopleInteractor
 import com.sirius.hello_friend.ui.model.PeopleViewState
-import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Flowable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -12,7 +11,6 @@ import io.reactivex.rxjava3.processors.BehaviorProcessor
 import io.reactivex.rxjava3.schedulers.Schedulers
 import javax.inject.Inject
 
-@HiltViewModel
 class PeopleVM @Inject constructor(
     private val interactor: PeopleInteractor
 ) : ViewModel() {
